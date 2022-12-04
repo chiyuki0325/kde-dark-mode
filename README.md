@@ -1,4 +1,4 @@
-## Possible dark mode solution for KDE Plasma
+This script is a possible dark mode solution for KDE Plasma, working as an alternative to KDE Plasma's built-in 'activities' if you want to keep the windows when switch between dark and light modes.
 
 This script contains the following changes to toggle between dark and light modes in KDE Plasma:
 
