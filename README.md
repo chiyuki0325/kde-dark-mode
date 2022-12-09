@@ -16,9 +16,15 @@ To use this script, **edit these items first**. You can comment out unneeded ite
 
 - `qt5-tools`
 
-- `glib2`
 - Kvantum Manager
+
 - Python & PyQt5
+
+### Usage
+
+`dark-mode-switch dark`: Switch to dark theme.  
+`dark-mode-switch light`: Switch to light theme.    
+`dark-mode-switch auto`: Switch theme automatically depends on current time (can be used in crontabs.).  
 
 ### Tips
 

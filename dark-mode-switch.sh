@@ -23,6 +23,9 @@ DARK_FCITX5_THEME="plasma"  # Dark fcitx5 skin
 LIGHT_WALLPAPER="file:///usr/share/wallpapers/Altai/"  # Light wallpaper source
 DARK_WALLPAPER="file:///usr/share/wallpapers/Next/"  # Dark wallpaper source
 
+DAY="6"  # The hour the day begins
+NIGHT="22"  # The hour the night begins
+
 if [ -z "$XDG_CONFIG_HOME" ]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 
 function switch_wallpaper() {
@@ -68,10 +71,25 @@ function finalize() {
     qdbus org.fcitx.Fcitx5 /controller "org.fcitx.Fcitx.Controller1.ReloadAddonConfig" "classicui"  # Reload fcitx5 skin
 }
 
+if [[ "$1" == "help" ||  "$1" == "-h" || "$1" == "--help" ]]; then
+    echo 'Usage: dark-mode-switch [dark light auto]'
+    echo 'By YidaozhanYa'
+fi
+
 if [ "$1" == "dark" ]; then dark_theme; finalize; exit; fi
 if [ "$1" == "light" ]; then light_theme; finalize; exit; fi
 
 CURRENT_KVANTUM_THEME="$(kreadconfig5 --group "General" --file "$XDG_CONFIG_HOME/Kvantum/kvantum.kvconfig" --key "theme")"
+
+if [ "$1" == "auto" ]; then
+    CURRENT_HOUR="$(date +%H)"
+    if [[ "$CURRENT_HOUR" -ge "$DAY" && "$CURRENT_HOUR" -lt "$NIGHT" ]]; then
+        if [ "$CURRENT_KVANTUM_THEME" != "$LIGHT_KVANTUM_THEME" ]; then light_theme; finalize; fi
+    else
+        if [ "$CURRENT_KVANTUM_THEME" != "$DARK_KVANTUM_THEME" ]; then dark_theme; finalize; fi
+    fi
+    exit
+fi
 
 if [ "$CURRENT_KVANTUM_THEME" == "$LIGHT_KVANTUM_THEME" ]; then
     dark_theme
