@@ -43,6 +43,7 @@ function switch_wallpaper() {
 }
 
 function dark_theme() {
+    rm -rf "$XDG_CONFIG_HOME/gtk-4.0/"*".css"
     switch_wallpaper "$DARK_WALLPAPER"
     plasma-apply-colorscheme "$DARK_COLOR_SCHEME"
     /usr/lib/plasma-changeicons "$DARK_ICON_THEME"
@@ -50,10 +51,11 @@ function dark_theme() {
     gsettings set org.gnome.desktop.interface "color-scheme" "prefer-dark"
     kvantummanager --set "$DARK_KVANTUM_THEME"
     kwriteconfig5 --file "$XDG_CONFIG_HOME/fcitx5/conf/classicui.conf" --key "Theme" --group "<default>" "$DARK_FCITX5_THEME"
-    cp "$HOME/.themes/$DARK_GTK4_THEME/gtk-4.0/gtk.css" "$XDG_CONFIG_HOME/gtk-4.0/gtk.css"
+    cp -r "$HOME/.themes/$DARK_GTK4_THEME/gtk-4.0" "$XDG_CONFIG_HOME"
 }
 
 function light_theme() {
+    rm -rf "$XDG_CONFIG_HOME/gtk-4.0/"*".css"
     switch_wallpaper "$LIGHT_WALLPAPER"
     plasma-apply-colorscheme "$LIGHT_COLOR_SCHEME"
     /usr/lib/plasma-changeicons "$LIGHT_ICON_THEME"
@@ -61,7 +63,7 @@ function light_theme() {
     gsettings set org.gnome.desktop.interface "color-scheme" "prefer-light"
     kvantummanager --set "$LIGHT_KVANTUM_THEME"
     kwriteconfig5 --file "$XDG_CONFIG_HOME/fcitx5/conf/classicui.conf" --key "Theme" --group "<default>" "$LIGHT_FCITX5_THEME"
-    cp "$HOME/.themes/$LIGHT_GTK4_THEME/gtk-4.0/gtk.css" "$XDG_CONFIG_HOME/gtk-4.0/gtk.css"
+    cp -r "$HOME/.themes/$LIGHT_GTK4_THEME/gtk-4.0" "$XDG_CONFIG_HOME"
 }
 
 function finalize() {
