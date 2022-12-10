@@ -30,4 +30,4 @@ You can edit the script to make it support more wallpaper plugins, pull requests
 `dark-mode-switch`: Switch between dark and light theme.  
 `dark-mode-switch dark`: Switch to dark theme.  
 `dark-mode-switch light`: Switch to light theme.    
-`dark-mode-switch auto`: Switch theme automatically depends on current time (can be used in crontabs.).  
+`dark-mode-switch auto`: Switch theme automatically depends on current time (used in crontabs). 
