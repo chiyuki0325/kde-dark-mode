@@ -10,7 +10,8 @@ This script contains the following changes to toggle between dark and light mode
 - Fcitx5 skin
 - Wallpaper
 
-To use this script, **edit these items first**. You can comment out unneeded items.
+To use this script, **edit these items first**. You can comment out unneeded items.  
+You can get your current theme config with `get-current-theme-config.sh`.
 
 ### Dependencies
 
