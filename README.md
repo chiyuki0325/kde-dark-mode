@@ -16,9 +16,7 @@ You can get your current theme config with `get-current-theme-config.sh`.
 ### Dependencies
 
 - `qt5-tools`
-
 - Kvantum Manager
-
 - Python & PyQt5
 
 ### Wallpaper Plugins
