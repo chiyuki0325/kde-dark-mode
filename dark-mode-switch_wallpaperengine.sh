@@ -87,7 +87,7 @@ if [ "$1" == "light" ]; then light_theme; finalize; exit; fi
 CURRENT_KVANTUM_THEME="$(kreadconfig5 --group "General" --file "$XDG_CONFIG_HOME/Kvantum/kvantum.kvconfig" --key "theme")"
 
 if [ "$1" == "auto" ]; then
-    CURRENT_HOUR="$(date +%H)"
+    CURRENT_HOUR="$(date +%_H | sed 's# ##g')"
     if [[ "$CURRENT_HOUR" -ge "$DAY" && "$CURRENT_HOUR" -lt "$NIGHT" ]]; then
         if [ "$CURRENT_KVANTUM_THEME" != "$LIGHT_KVANTUM_THEME" ]; then light_theme; finalize; fi
     else
