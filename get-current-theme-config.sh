@@ -27,7 +27,7 @@ qdbus org.kde.plasmashell /PlasmaShell "org.kde.PlasmaShell.evaluateScript" '
             print("- Desktop " + i + " wallpaper plugin: Image\n  Wallpaper source: \u0027" + d.readConfig("Image") + "\u0027");
         } else if (d.wallpaperPlugin == "com.github.casout.wallpaperEngineKde") {
             d.currentConfigGroup = Array("Wallpaper", "com.github.casout.wallpaperEngineKde", "General");
-            print("- Desktop " + i + " wallpaper plugin: Wallpaper Engine for KDE\n  Wallpaper source: \u0027" + d.readConfig("WallpaperSource") + "\u0027\n  Wallpaper Workshop ID: \u0027" + d.readConfig("WallpaperWorkShopId")) + "\u0027";
+            print("- Desktop " + i + " wallpaper plugin: Wallpaper Engine for KDE\n  Wallpaper source: \u0027" + d.readConfig("WallpaperSource") + "\u0027\n  Wallpaper Workshop ID: \u0027" + d.readConfig("WallpaperWorkShopId") + "\u0027");
         }
     }
 '
