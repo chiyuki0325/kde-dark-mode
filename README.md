@@ -1,6 +1,6 @@
 This script is a possible dark mode solution for KDE Plasma, working as an alternative to KDE Plasma's built-in 'activities' if you want to keep the windows when switch between dark and light modes.
 
-This script contains the following changes to toggle between dark and light modes in KDE Plasma:
+This script contains the following changes switched between dark and light modes:
 
 - GTK 2 / 3 theme
 - GTK 4 (libadwaita) theme
@@ -21,12 +21,15 @@ You can get your current theme config with `get-current-theme-config.sh`.
 
 - Python & PyQt5
 
+### Wallpaper Plugins
+
+This script supports built-in Image and catsout's Wallpaper Engine plugins. Please choose the script according to the wallpaper plugin you are using.
+
+You can edit the script to make it support more wallpaper plugins, pull requests are welcome.
+
 ### Usage
 
+`dark-mode-switch`: Switch between dark and light theme.  
 `dark-mode-switch dark`: Switch to dark theme.  
 `dark-mode-switch light`: Switch to light theme.    
 `dark-mode-switch auto`: Switch theme automatically depends on current time (can be used in crontabs.).  
-
-### Tips
-
-Some slight changes are required to get this script to work with Wallpaper Engine for KDE, see `dark-mode-switch_wallpaperengine.sh`.
