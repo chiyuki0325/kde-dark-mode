@@ -4,7 +4,7 @@
 
 # environment variables for running in cron
 if [ -f "$HOME/.cache/environment-variables.save" ]; then
-    export $(cat "$HOME/.cache/environment-variables.save" | base64 -d)
+    eval "$(cat "$HOME/.cache/environment-variables.save" | base64 -d)"
 fi
 
 LIGHT_KVANTUM_THEME="Fluent-round"  # Light Kvantum theme
