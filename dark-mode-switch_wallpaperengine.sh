@@ -3,19 +3,9 @@
 # By YidaozhanYa
 
 # environment variables for running in cron
-export DISPLAY=:0
-export QT_QPA_PLATFORM=xcb
-export DESKTOP_SESSION=plasma
-export KDE_SESSION_UID=1000
-export XDG_CURRENT_DESKTOP=KDE
-export XDG_RUNTIME_DIR=/run/user/1000
-export XDG_SEAT=seat0
-export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
-export XDG_SESSION_CLASS=user
-export XDG_SESSION_DESKTOP=KDE
-export XDG_SESSION_ID=1
-export XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
-export XDG_SESSION_TYPE=x11
+if [ -f "$HOME/.cache/environment-variables.save" ]; then
+    export $(cat "$HOME/.cache/environment-variables.save" | base64 -d)
+fi
 
 LIGHT_KVANTUM_THEME="Fluent-round"  # Light Kvantum theme
 DARK_KVANTUM_THEME="Fluent-roundDark"  # Dark Kvantum theme
