@@ -1,3 +1,6 @@
+# ⚠️ Deprecated!
+### See https://github.com/YidaozhanYa/KDEQuickSwitches/blob/main/switches/dark.py
+
 This script is a possible dark mode solution for KDE Plasma, working as an alternative to KDE Plasma's built-in 'activities' if you want to keep the windows when switch between dark and light modes.
 
 This script contains the following changes switched between dark and light modes:
